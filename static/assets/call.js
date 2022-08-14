@@ -177,6 +177,7 @@ function beReady() {
 }
 
 function createConnectionAndAddStream() {
+    console.log("GOT TO CREATE CONNECTION AND ADD STREAM")
     createPeerConnection();
     peerConnection.addStream(localStream);
     return true;
