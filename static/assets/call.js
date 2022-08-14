@@ -19,6 +19,7 @@ let callInProgress = false;
 function call() {
     let userToCall = document.getElementById("callName").value;
     otherUser = userToCall;
+    console.log("RECIEVED CALL REQUEST TO "+ userToCall)
 
     beReady()
         .then(bool => {
@@ -41,7 +42,7 @@ function answer() {
 let pcConfig = {
     "iceServers":
         [
-            { "url": "stun1.l.google.com:19302" },
+            { "url": "stun.l.google.com:19302" },
             {
                 "url": "turn:turn.jap.bloggernepal.com:5349",
                 "username": "guest",
@@ -253,10 +254,10 @@ function createPeerConnection() {
 }
 
 function handleIceCandidate(event) {
-    // console.log('icecandidate event: ', event);
+    console.log('icecandidate event: ', event);
     if (event.candidate) {
         console.log("Local ICE candidate");
-        // console.log(event.candidate.candidate);
+        console.log(event.candidate.candidate);
 
         sendICEcandidate({
             user: otherUser,
