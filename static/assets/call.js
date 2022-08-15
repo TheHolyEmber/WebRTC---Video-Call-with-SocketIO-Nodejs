@@ -17,6 +17,7 @@ let callInProgress = false;
 
 //event from html
 function call() {
+    alert("recieved request to call " + userToCall)
     let userToCall = document.getElementById("callName").value;
     otherUser = userToCall;
     console.log("RECIEVED CALL REQUEST TO "+ userToCall)
@@ -127,6 +128,7 @@ function sendCall(data) {
     // document.getElementById("profileImageCA").src = baseURL + otherUserProfile.image;
     document.getElementById("otherUserNameCA").innerHTML = otherUser;
     document.getElementById("calling").style.display = "block";
+    alert("sent call")
 }
 
 
@@ -161,7 +163,6 @@ function beReady() {
         video: true
     })
         .then(stream => {
-            console.log("READY");
             localStream = stream;
             localVideo.srcObject = stream;
 
