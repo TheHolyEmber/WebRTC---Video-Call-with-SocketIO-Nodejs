@@ -161,6 +161,7 @@ function beReady() {
         video: true
     })
         .then(stream => {
+            console.log("READY");
             localStream = stream;
             localVideo.srcObject = stream;
 
