@@ -19,7 +19,7 @@ module.exports.initIO = (httpServer) => {
         socket.on('call', (data) => {
             let callee = data.name;
             let rtcMessage = data.rtcMessage;
-
+            console.log("CALL PRESSED")
             socket.to(callee).emit("newCall", {
                 caller: socket.user,
                 rtcMessage: rtcMessage
