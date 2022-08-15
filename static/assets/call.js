@@ -30,7 +30,7 @@ function call() {
 //event from html
 function answer() {
     //do the event firing
-
+    console.log("RECIEVED ANSWER TO")
     beReady()
         .then(bool => {
             processAccept();
@@ -42,12 +42,7 @@ function answer() {
 let pcConfig = {
     "iceServers":
         [
-            { "url": "stun.l.google.com:19302" },
-            {
-                "url": "turn:turn.jap.bloggernepal.com:5349",
-                "username": "guest",
-                "credential": "somepassword"
-            }
+            { "url": "stun.l.google.com:19302" }
         ]
 };
 
